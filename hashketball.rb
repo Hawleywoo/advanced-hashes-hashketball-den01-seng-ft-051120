@@ -138,6 +138,8 @@ def get_player_helper(player_name)
   end
 end
 
+
+
 def roster_help(team_name)
   team_roster = {}
   if game_hash[:home][:team_name][0] == team_name
@@ -207,7 +209,7 @@ def player_stats(player_name)
   stats_by_name = {}
   full_player = get_player_helper(player_name)
    full_player.each do |category, stats|
-     puts category
+     #puts category
 
      #if category != :player_name
     stats_by_name[category] = stats
@@ -235,3 +237,18 @@ def big_shoe_rebounds
   end
   rebounds
 end
+
+
+def prac(player_name)
+  game_hash.each do |home_away, team|
+    #puts team
+    team[:players].each do |each_player|
+      puts each_player
+      if each_player[:player_name] == player_name
+        return each_player
+      end
+    end
+  end
+end
+
+prac('kemba walker')
