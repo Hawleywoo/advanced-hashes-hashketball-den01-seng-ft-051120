@@ -209,11 +209,8 @@ def player_stats(player_name)
   stats_by_name = {}
   full_player = get_player_helper(player_name)
    full_player.each do |category, stats|
-     #puts category
-
-     #if category != :player_name
+   
     stats_by_name[category] = stats
-     #end
 
      end
    stats_by_name
